@@ -1,0 +1,15 @@
+<extension>
+    <modules>
+        <module>
+            <id>Share Audit Header Menu</id>
+            <version>1.0</version>
+            <auto-deploy>true</auto-deploy>  
+            <customizations>
+                <customization>
+                    <targetPackageRoot>org.alfresco.share.header</targetPackageRoot>
+                    <sourcePackageRoot>com.domain.share.header</sourcePackageRoot>
+                </customization>
+            </customizations>
+        </module>
+    </modules>
+</extension>
