@@ -35,8 +35,9 @@ public class AuditWebScript extends DeclarativeWebScript {
 		Map<String, Object> model = new HashMap<String, Object>();
 		List<Record> result = new ArrayList<>();
 
-		String regexFec = "^\\d{1,2}?/\\d{1,2}?/\\d{4}?$";
+		String regexFec = "^\\d{1,2}?-\\d{1,2}?-\\d{4}?$";
 		SimpleDateFormat FORMATO_YMD_HMS = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat FORMATE_DMY = new SimpleDateFormat("dd-MM-yyyy");
 
 		try {
 			StringBuffer sb = new StringBuffer();
@@ -52,10 +53,10 @@ public class AuditWebScript extends DeclarativeWebScript {
 				sb.append("&user=" + user);
 			}
 			if (dateIni != null && Pattern.matches(regexFec, dateIni)) {
-				sb.append("&fromTime=" + FORMATO_YMD_HMS.parse(dateIni).getTime());
+				sb.append("&fromTime=" + FORMATE_DMY.parse(dateIni).getTime());
 			}
 			if (dateFin != null && Pattern.matches(regexFec, dateFin)) {
-				sb.append("&toTime=" + FORMATO_YMD_HMS.parse(dateFin).getTime());
+				sb.append("&toTime=" + FORMATE_DMY.parse(dateFin).getTime());
 			}
 
 			URL url = new URL(sb.toString());

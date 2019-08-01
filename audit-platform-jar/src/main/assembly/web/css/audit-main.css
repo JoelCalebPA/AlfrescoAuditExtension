@@ -6,12 +6,12 @@
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('Poppins-Regular.ttf'); 
+  src: url('./fonts/Poppins-Regular.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url('Poppins-Bold.ttf'); 
+  src: url('./fonts/Poppins-Bold.ttf'); 
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -264,8 +264,6 @@ iframe {
   .filter .row .cell {
     border: none;
     padding-left: 30px;
-    padding-top: 0px;
-    padding-bottom: 0px;
   }
     
   .filter .row {
@@ -274,14 +272,13 @@ iframe {
   }
   
   .hide-this {
-  	display: none;
+    display: none;
   }
 }
 
 .hide-this {
   font-family: Poppins-Regular;
   font-size: 18px;
-  color: #fff;
   line-height: 1.2;
   font-weight: unset !important;
   padding-top: 15px;
@@ -290,6 +287,24 @@ iframe {
   color: #ffffff;
 }
 
-.hide-this:nth-last-child() {
+.ht-last {
   padding-bottom: 15px;
 }
+
+.filter .row .cell:nth-child(2) {
+  width: 70%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.filter .row .cell {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.2;
+  font-weight: unset !important;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-bottom: 0px #f2f2f2;  
+}
+

@@ -29,48 +29,55 @@
 	<div class="limiter">
 		<div class="container-table100 filter">
 			<div class="wrap-table100">
-				<div class="table">
-					<div class="row">
-						<div class="hide-this">
-							<label>Usuario</label>
+				<form id="form-Reporte" name="form-Reporte" method="get" accept-charset="utf-8">
+					<div class="table">
+						<div class="row">
+							<div class="hide-this">
+								<label>Usuario</label>
+							</div>
+							<div class="cell" data-title="Usuario">
+								<input id="user" class="form-control" name="user" type="Text" value='${(args.user)!""}' style="width: 100%; background-color: #e9ecef;" />
+							</div>
 						</div>
-						<div class="cell" data-title="Usuario">
-							<input id="user" name="user" type="Text" value='${(args.user)!""}' style="width: 70%" />
+						<div class="row">
+							<div class="hide-this">
+								<label>Acción</label>
+							</div>
+							<div class="cell" data-title="Acción">
+								<input id="action" class="form-control" name="action" type="Text" value='${(args.action)!""}' style="width: 100%; background-color: #e9ecef;" />
+							</div>
 						</div>
+						<div class="row">
+							<div class="hide-this">
+								<label>Documento</label>
+							</div>
+							<div class="cell" data-title="Documento">
+								<input id="document" class="form-control" name="document" type="Text" value='${(args.document)!""}' style="width: 100%; background-color: #e9ecef;" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="hide-this">
+								<label>Fecha Inicial</label>
+							</div>
+							<div class="cell" data-title="Fecha Inicial">
+								<input id="datepickerIni" class="form-control" name="dateIni" readonly="readonly" type="text" value='${(args.dateIni)!""}' />
+							</div>
+						</div>
+						<div class="row">
+							<div class="hide-this ht-last">
+								<label>Fecha Final</label>
+							</div>
+							<div class="cell" data-title="Fecha Final">
+								<input id="datepickerFin" class="form-control" name="dateFin" readonly="readonly" type="text" value='${(args.dateFin)!""}' />
+							</div>
+						</div>
+						<!-- <div class="row">
+							<div class="cell">
+								<button type="submit" class="btn btn-primary">Buscar</button>
+							</div>
+						</div> -->
 					</div>
-					<div class="row">
-						<div class="hide-this">
-							<label>Acción</label>
-						</div>
-						<div class="cell" data-title="Acción">
-							<input id="action" name="action" type="Text" value='${(args.action)!""}' style="width: 70%" />
-						</div>
-					</div>
-					<div class="row">
-						<div class="hide-this">
-							<label>Documento</label>
-						</div>
-						<div class="cell" data-title="Documento">
-							<input id="document" name="document" type="Text" value='${(args.document)!""}' style="width: 70%" />
-						</div>
-					</div>
-					<div class="row">
-						<div class="hide-this">
-							<label>Fecha Inicial</label>
-						</div>
-						<div class="cell" data-title="Fecha Inicial">
-							<input id="datepickerIni" name="dateIni" readonly="readonly" type="text" value='${(args.dateIni)!""}' />
-						</div>
-					</div>
-					<div class="row">
-						<div class="hide-this">
-							<label>Fecha Final</label>
-						</div>
-						<div class="cell" data-title="Fecha Final">
-							<input id="datepickerFin" name="dateFin" readonly="readonly" type="text" value='${(args.dateFin)!""}' />
-						</div>
-					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 		<div class="container-table100">
@@ -124,14 +131,18 @@
 <!--===============================================================================================-->
 	<script src="/alfresco/scripts/vendor/jquery-ui.min.js"></script>
 <!--===============================================================================================-->
+	<script src="/alfresco/scripts/vendor/pagination.min.js"></script>
+<!--===============================================================================================-->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$("#datepickerIni").datepicker();
-		    $("#datepickerFin").datepicker();
-		    $("#data-table").DataTable( {
-		        "pagingType": "full_numbers"
-		    } );
+			$("#datepickerIni").datepicker({
+				dateFormat: "dd-mm-yy"
+			});
+		    $("#datepickerFin").datepicker({
+				dateFormat: "dd-mm-yy"
+			});
 		} );
+		$('#myTable').DataTable();
 	</script>
 	
 </body>
