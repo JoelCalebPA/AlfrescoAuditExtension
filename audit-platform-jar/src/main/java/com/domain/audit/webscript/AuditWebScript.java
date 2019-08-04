@@ -88,18 +88,15 @@ public class AuditWebScript extends DeclarativeWebScript {
 					String actionRs = "";
 					String documentRs = "";
 					if (!arr.getJSONObject(i).getJSONObject("values").isNull("/alfresco-access/transaction/action")) {
-						if (arr.getJSONObject(i).getJSONObject("values").getString("/alfresco-access/transaction/type")
-								.equals("cm:content")) {
-							userRs = arr.getJSONObject(i).getJSONObject("values")
-									.getString("/alfresco-access/transaction/user");
-							actionRs = arr.getJSONObject(i).getJSONObject("values")
-									.getString("/alfresco-access/transaction/action");
-							documentRs = arr.getJSONObject(i).getJSONObject("values")
-									.getString("/alfresco-access/transaction/path");
-							Record r = new Record(userRs, dateRs, actionRs,
-									documentRs.substring(documentRs.lastIndexOf(":") + 1));
-							result.add(r);
-						}
+						userRs = arr.getJSONObject(i).getJSONObject("values")
+								.getString("/alfresco-access/transaction/user");
+						actionRs = arr.getJSONObject(i).getJSONObject("values")
+								.getString("/alfresco-access/transaction/action");
+						documentRs = arr.getJSONObject(i).getJSONObject("values")
+								.getString("/alfresco-access/transaction/path");
+						Record r = new Record(userRs, dateRs, actionRs,
+								documentRs.substring(documentRs.lastIndexOf(":") + 1), documentRs);
+						result.add(r);
 					}
 				}
 			} else {
