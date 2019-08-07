@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Audit</title>
 
+	<link rel="stylesheet" href="/alfresco/css/audit-main.css">
     <link rel="stylesheet" href="/alfresco/vendor/semantic.min.css">
     <link rel="stylesheet" href="/alfresco/vendor/dataTables.semanticui.min.css">
 </head>
@@ -19,7 +20,7 @@
                         <div class="field">
                             <label>Usuario</label>
                             <div class="ui input icon">
-                                <input type="search" placeholder="admin" aria-controls="myTable" value='${(args.user)!""}'>
+                                <input type="search" placeholder="admin" aria-controls="myTable" name="user" value='${(args.user)!""}'>
                                 <i class="user outline icon"></i>
                             </div>
                         </div>
@@ -78,7 +79,7 @@
                     <tr>
                         <th>Usuario</th>
                         <th>Acción</th>
-                        <th>Documento</th>
+                        <th>Documento / Folder</th>
                         <th>Ruta</th>
                         <th>Timestamp</th>
                     </tr>
@@ -99,6 +100,7 @@
             </table>
         </div>
     </div>
+	<script src="/alfresco/js/audit-main.js"></script>
 	<script src="/alfresco/vendor/jquery-3.3.1.js"></script>
 	<script src="/alfresco/vendor/jquery.dataTables.min.js"></script>
 	<script src="/alfresco/vendor/semantic.min.js"></script>
